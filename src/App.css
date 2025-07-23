@@ -450,44 +450,50 @@
 }
 
 @media (max-width: 362px) {
-  .Img-container {
-    position: relative;
-    display: block; /* inline → block for container layout */
-    width: 100%;
-  }
 
-  .Img-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+    .buttem {
+        margin-top: 10px;
+    }
 
-  .text-On-Img,
-  .text-On-Img1 {
-    position: absolute;
-    left: 20px;         
-    color: black;
-    border-radius: 5px;
-    font-size: 14px;    
-  }
+    .Img-container {
+        position: relative;
+        display: block;
+        /* inline → block for container layout */
+        width: 100%;
+    }
 
-  .text-On-Img {
-    top: 40px;
-  }
+    .Img-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-  .text-On-Img1 {
-    top: 70px;
-  }
+    .text-On-Img,
+    .text-On-Img1 {
+        position: absolute;
+        left: 20px;
+        color: black;
+        border-radius: 5px;
+        font-size: 14px;
+    }
 
-  .but-On-Img {
-    position: absolute;
-    left: 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5px 10px;   
-    font-size: 14px;
-  }
+    .text-On-Img {
+        top: 40px;
+    }
+
+    .text-On-Img1 {
+        top: 70px;
+    }
+
+    .but-On-Img {
+        position: absolute;
+        left: 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
 }
 
 
@@ -498,7 +504,7 @@
         align-items: center;
     }
 
-    .buttem{
+    .buttem {
         margin-top: 10px;
     }
 
@@ -565,13 +571,13 @@
     }
 
     .but-On-Img {
-    position: absolute;
-    bottom: 35px;
-    left: 40px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        position: absolute;
+        bottom: 35px;
+        left: 40px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
     .shipping-info li {
         width: 100%;
