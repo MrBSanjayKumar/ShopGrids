@@ -54,20 +54,37 @@ const Product = () => {
                   return false;
                 })
                 .map((ProductPage) => (
-                  <div className='col-lg-3 col-md-6 col-12 py-4 mb-4' data-name={ProductPage.dataName} key={ProductPage.id}>
-                    <div style={{ border: 'none', padding: '10px', backgroundColor: "white" }}>
-                      <img src={ProductPage.img} alt='...' width='100%' />
+                  <div
+                    className='col-lg-3 col-md-6 col-12 py-4 mb-4'
+                    data-name={ProductPage.dataName}
+                    key={ProductPage.id}
+                  >
+                    <div
+                      style={{
+                        border: 'none',
+                        padding: '10px',
+                        backgroundColor: "white",
+                        width: "250px",
+                        height: "350px",
+                        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+                        borderRadius: "10px"
+                      }}
+                    >
+                      <img src={ProductPage.img} alt='...' width='100%' style={{ height: '180px', objectFit: 'cover' }} />
                       <h6>{ProductPage.name}</h6>
                       <h4>{ProductPage.sub}</h4>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star"></i>
+                      <div style={{ color: "#f8b400" }}>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star"></i>
+                      </div>
                       <p>${ProductPage.price}</p>
                     </div>
                   </div>
                 ))
+
             }
           </div>
         </div>
