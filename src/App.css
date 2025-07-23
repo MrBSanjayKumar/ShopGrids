@@ -498,10 +498,6 @@
         align-items: center;
     }
 
-    .buttem {
-        margin-top: 10px;
-    }
-
     .navlinks {
         flex-direction: column;
         position: relative;
@@ -579,5 +575,9 @@
 
     .footer {
         text-align: center;
+    }
+
+    .buttem {
+        margin-top: 10px;
     }
 }
