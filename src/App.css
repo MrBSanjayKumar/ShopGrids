@@ -451,10 +451,13 @@
 
 @media (max-width: 362px) {
 
+    .buttem {
+        margin-top: 10px;
+    }
+    
     .Img-container {
         position: relative;
         display: block;
-        /* inline → block for container layout */
         width: 100%;
     }
 
