@@ -1,4 +1,4 @@
-// import Image1 from '../images/hero/slider-bg1.jpg'
+import Image1 from '../images/hero/slider-bg1.jpg'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CardImg from '../images/products/product-1.jpg'
@@ -32,7 +32,7 @@ function Home() {
         <div className='container'>
           <div className='row mx-auto'>
             <div className='col-12 py-3'>
-              
+              <img className='Imgslider' src={Image1} alt='' />
             </div>
           </div>
         </div>
