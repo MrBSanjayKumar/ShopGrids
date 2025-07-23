@@ -465,10 +465,10 @@
   .text-On-Img,
   .text-On-Img1 {
     position: absolute;
-    left: 20px;         /* reduced for smaller screen */
+    left: 20px;         
     color: black;
     border-radius: 5px;
-    font-size: 14px;    /* optional: scale text for mobile */
+    font-size: 14px;    
   }
 
   .text-On-Img {
@@ -481,12 +481,11 @@
 
   .but-On-Img {
     position: absolute;
-    
     left: 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 5px 10px;   /* optional: adjust button size */
+    padding: 5px 10px;   
     font-size: 14px;
   }
 }
