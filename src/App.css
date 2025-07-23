@@ -450,7 +450,7 @@
 }
 
 @media (max-width: 362px) {
-
+        
     .Img-container {
         position: relative;
         display: block;
@@ -499,6 +499,10 @@
         align-items: center;
     }
 
+    .buttem {
+        margin-top: 10px;
+    }
+
     .navlinks {
         flex-direction: column;
         position: relative;
@@ -533,9 +537,6 @@
         display: none;
     }
 
-    .buttem {
-        margin-top: 10px;
-    }
 
     .Img-container {
         position: relative;
