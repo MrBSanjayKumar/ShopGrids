@@ -463,6 +463,10 @@
         display: block;
     }
 
+    .buttem {
+        margin-top: 10px;
+    }
+
     .text-On-Img,
     .text-On-Img1 {
         position: absolute;
