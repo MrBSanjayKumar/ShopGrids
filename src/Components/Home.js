@@ -1,4 +1,4 @@
-import Image2 from '../images/hero/slider-bg1.jpg'
+import Image1 from '../images/hero/slider-bg1.jpg'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CardImg from '../images/products/product-1.jpg'
@@ -32,7 +32,7 @@ function Home() {
         <div className='container'>
           <div className='row mx-auto'>
             <div className='col-12 py-3'>
-              <img className='Imgslider' src={Image2} alt='' />
+              <img className='Imgslider' src={Image1} alt='' />
             </div>
           </div>
         </div>
@@ -45,16 +45,31 @@ function Home() {
           <p className='py-4' style={{ textAlign: "center" }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration <br /> in some form</p>
           <div className='row'>
             {Product.map((product) => (
-              <div className='col-lg-3 col-md-6 col-12 py-2 mb-4 car' key={product.id}>
-                <div style={{ border: 'none', padding: '10px', backgroundColor: "white" }}>
-                  <img className='img' src={product.img} alt='...' width='100%' />
+              <div
+                className='col-lg-3 col-md-6 col-12 py-4 mb-4'
+                key={product.id}
+              >
+                <div
+                  style={{
+                    border: 'none',
+                    padding: '10px',
+                    backgroundColor: "white",
+                    width: "250px",
+                    height: "350px",
+                    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+                    borderRadius: "10px"
+                  }}
+                >
+                  <img className='img' src={product.img} alt='...' width='100%' style={{ height: '180px', objectFit: 'cover' }} />
                   <h6>{product.name}</h6>
                   <h4>{product.sub}</h4>
-                  <i className="bi bi-star-fill"></i>
-                  <i className="bi bi-star-fill"></i>
-                  <i className="bi bi-star-fill"></i>
-                  <i className="bi bi-star-fill"></i>
-                  <i className="bi bi-star"></i>
+                  <div style={{ color: "#f8b400" }}>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
                   <p>${product.price}</p>
                 </div>
               </div>
