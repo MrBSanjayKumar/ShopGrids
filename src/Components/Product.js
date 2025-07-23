@@ -59,11 +59,13 @@ const Product = () => {
                       <img src={ProductPage.img} alt='...' width='100%' />
                       <h6>{ProductPage.name}</h6>
                       <h4>{ProductPage.sub}</h4>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star"></i>
+                      <div style={{ color: "#f8b400" }}>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star"></i>
+                      </div>
                       <p>${ProductPage.price}</p>
                     </div>
                   </div>

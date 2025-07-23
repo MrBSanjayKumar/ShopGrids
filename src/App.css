@@ -497,11 +497,6 @@
 
 @media(max-width:480px) {
 
-    .Img-slider-left {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .navlinks {
         flex-direction: column;
         position: relative;
@@ -534,43 +529,6 @@
 
     .menu-toggle {
         display: none;
-    }
-
-
-    .Img-container {
-        position: relative;
-        display: inline;
-    }
-
-    .Img-container img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .text-On-Img {
-        position: absolute;
-        top: 60px;
-        left: 40px;
-        color: black;
-        border-radius: 5px;
-    }
-
-    .text-On-Img1 {
-        position: absolute;
-        top: 90px;
-        left: 40px;
-        color: black;
-        border-radius: 5px;
-    }
-
-    .but-On-Img {
-        position: absolute;
-        bottom: 35px;
-        left: 40px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
     }
 
     .shipping-info li {
