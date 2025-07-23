@@ -454,7 +454,8 @@
     .buttem {
         margin-top: 10px;
     }
-    
+
+
     .Img-container {
         position: relative;
         display: block;
@@ -586,5 +587,3 @@
         text-align: center;
     }
 }
-
-@media(max-width:768px) {}
