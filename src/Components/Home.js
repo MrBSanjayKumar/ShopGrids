@@ -20,6 +20,10 @@ import Image10 from '../images/products/02.jpg';
 import Image11 from '../images/products/03.jpg';
 import Image12 from '../images/products/04.jpg';
 import Image13 from '../images/products/05.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 
 const Product = [
   { id: 1, sub: 'Xiaomi Mi Band 5', name: 'Watches', img: CardImg, price: 199 },
@@ -40,7 +44,7 @@ function Home() {
           <div className='row mx-auto'>
             <div className='col-12 py-3'>
               <Carousel interval={3000} pause={false}>
-                
+
                 <Carousel.Item>
                   <img className="d-block w-100" src={image1} alt="image1" />
                 </Carousel.Item>
@@ -122,7 +126,7 @@ function Home() {
                 <Carousel.Item>
                   <img className="d-block w-100" src={Image6} alt="image2" />
                 </Carousel.Item>
-                
+
                 <Carousel.Item>
                   <img className="d-block w-100" src={Image12} alt="image2" />
                 </Carousel.Item>
@@ -130,7 +134,7 @@ function Home() {
                 <Carousel.Item>
                   <img className="d-block w-100" src={Image13} alt="image2" />
                 </Carousel.Item>
-                
+
               </Carousel>
             </div>
           </div>

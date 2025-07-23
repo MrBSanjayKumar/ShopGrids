@@ -9,6 +9,7 @@ import CardImg4 from '../images/products/product-5.jpg'
 import CardImg5 from '../images/products/product-6.jpg'
 import CardImg6 from '../images/products/product-7.jpg'
 import CardImg7 from '../images/products/product-8.jpg'
+   import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Product1 = [
   { id: 1, sub: 'Xiaomi Mi Band 5', name: 'Watches', img: CardImg, price: 199, dataName: "Watches" },
