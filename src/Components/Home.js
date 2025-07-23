@@ -1,4 +1,6 @@
-import Image1 from '../images/hero/slider-bg1.jpg'
+import { Carousel } from 'react-bootstrap'
+import image1 from '../images/hero/slider-bg1.jpg'
+import image2 from '../images/hero/slider-bg2.jpg'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CardImg from '../images/products/product-1.jpg'
@@ -13,6 +15,11 @@ import Image5 from '../images/banner/banner-1-bg.jpg'
 import Image6 from '../images/banner/banner-2-bg.jpg'
 import Image7 from '../images/logo/white-logo.svg'
 import Image8 from '../images/footer/credit-cards-footer.png'
+import Image9 from '../images/products/01.jpg';
+import Image10 from '../images/products/02.jpg';
+import Image11 from '../images/products/03.jpg';
+import Image12 from '../images/products/04.jpg';
+import Image13 from '../images/products/05.jpg';
 
 const Product = [
   { id: 1, sub: 'Xiaomi Mi Band 5', name: 'Watches', img: CardImg, price: 199 },
@@ -32,7 +39,17 @@ function Home() {
         <div className='container'>
           <div className='row mx-auto'>
             <div className='col-12 py-3'>
-              <img className='Imgslider' src={Image1} alt='' />
+              <Carousel interval={3000} pause={false}>
+                
+                <Carousel.Item>
+                  <img className="d-block w-100" src={image1} alt="image1" />
+                </Carousel.Item>
+
+                <Carousel.Item>
+                  <img className="d-block w-100" src={image2} alt="image2" />
+                </Carousel.Item>
+
+              </Carousel>
             </div>
           </div>
         </div>
@@ -41,7 +58,7 @@ function Home() {
 
       <section className='banner1'>
         <div className='container'>
-          <h2 style={{ textAlign: "center" }}>Trending Product</h2>
+          <h2 className='py-4' style={{ textAlign: "center" }}>Trending Product</h2>
           <p className='py-4' style={{ textAlign: "center" }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration <br /> in some form</p>
           <div className='row'>
             {Product.map((product) => (
@@ -50,11 +67,13 @@ function Home() {
                   <img className='img' src={product.img} alt='...' width='100%' />
                   <h6>{product.name}</h6>
                   <h4>{product.sub}</h4>
-                  <i className="bi bi-star-fill"></i>
-                  <i className="bi bi-star-fill"></i>
-                  <i className="bi bi-star-fill"></i>
-                  <i className="bi bi-star-fill"></i>
-                  <i className="bi bi-star"></i>
+                  <div style={{ color: "#f8b400" }}>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
                   <p>${product.price}</p>
                 </div>
               </div>
@@ -76,21 +95,43 @@ function Home() {
       <section className='banner3'>
         <div className='container'>
           <div className='row'>
-            <div className='col-lg-6 col-md-6 col-12 py-5'>
-              <div className='Img-container py-5'>
-                <img src={Image5} alt='Image5' />
-                <h4 className='text-On-Img'>Smart Watch 2.0</h4>
-                <p className='text-On-Img1'>Space Gray Aluminum Case with <br /> Black/Volt Real Sport Band</p>
-                <button className='but-On-Img btn btn-primary'>View Details</button>
-              </div>
+            <div className='col-lg-6 col-md-6 col-12 py-4'>
+              <Carousel interval={3000} pause={false}>
+
+                <Carousel.Item>
+                  <img className="d-block w-100" src={Image5} alt="image1" />
+                </Carousel.Item>
+
+                <Carousel.Item>
+                  <img className="d-block w-100" src={Image9} alt="image2" />
+                </Carousel.Item>
+
+                <Carousel.Item>
+                  <img className="d-block w-100" src={Image11} alt="image2" />
+                </Carousel.Item>
+
+              </Carousel>
             </div>
-            <div className='col-lg-6 col-md-6 col-12 py-5'>
-              <div className='Img-container py-5'>
-                <img src={Image6} alt='Image6' />
-                <h4 className='text-On-Img'>Smart Headphone</h4>
-                <p className='text-On-Img1'>Lorem ipsum dolor sit amet, <br /> eiusmod tempor incididunt <br /> ut labore.</p>
-                <button className='but-On-Img btn btn-primary'>Shop Now</button>
-              </div>
+            <div className='col-lg-6 col-md-6 col-12 py-4'>
+              <Carousel interval={3000} pause={false}>
+
+                <Carousel.Item>
+                  <img className="d-block w-100" src={Image10} alt="image1" />
+                </Carousel.Item>
+
+                <Carousel.Item>
+                  <img className="d-block w-100" src={Image6} alt="image2" />
+                </Carousel.Item>
+                
+                <Carousel.Item>
+                  <img className="d-block w-100" src={Image12} alt="image2" />
+                </Carousel.Item>
+
+                <Carousel.Item>
+                  <img className="d-block w-100" src={Image13} alt="image2" />
+                </Carousel.Item>
+                
+              </Carousel>
             </div>
           </div>
         </div>
