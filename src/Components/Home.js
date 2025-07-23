@@ -45,31 +45,16 @@ function Home() {
           <p className='py-4' style={{ textAlign: "center" }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration <br /> in some form</p>
           <div className='row'>
             {Product.map((product) => (
-              <div
-                className='col-lg-3 col-md-6 col-12 py-4 mb-4'
-                key={product.id}
-              >
-                <div
-                  style={{
-                    border: 'none',
-                    padding: '10px',
-                    backgroundColor: "white",
-                    width: "250px",
-                    height: "350px",
-                    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-                    borderRadius: "10px"
-                  }}
-                >
-                  <img className='img' src={product.img} alt='...' width='100%' style={{ height: '180px', objectFit: 'cover' }} />
+              <div className='col-lg-3 col-md-6 col-12 py-2 mb-4 car' key={product.id}>
+                <div style={{ border: 'none', padding: '10px', backgroundColor: "white" }}>
+                  <img className='img' src={product.img} alt='...' width='100%' />
                   <h6>{product.name}</h6>
                   <h4>{product.sub}</h4>
-                  <div style={{ color: "#f8b400" }}>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star"></i>
-                  </div>
+                  <i className="bi bi-star-fill"></i>
+                  <i className="bi bi-star-fill"></i>
+                  <i className="bi bi-star-fill"></i>
+                  <i className="bi bi-star-fill"></i>
+                  <i className="bi bi-star"></i>
                   <p>${product.price}</p>
                 </div>
               </div>
