@@ -449,51 +449,6 @@
     }
 }
 
-@media (max-width: 362px) {
-
-    .Img-container {
-        position: relative;
-        display: block;
-        width: 100%;
-    }
-
-    .Img-container img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .buttem {
-        margin-top: 10px;
-    }
-
-    .text-On-Img,
-    .text-On-Img1 {
-        position: absolute;
-        left: 20px;
-        color: black;
-        border-radius: 5px;
-        font-size: 14px;
-    }
-
-    .text-On-Img {
-        top: 40px;
-    }
-
-    .text-On-Img1 {
-        top: 70px;
-    }
-
-    .but-On-Img {
-        position: absolute;
-        left: 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        padding: 5px 10px;
-        font-size: 14px;
-    }
-}
 
 @media(max-width:480px) {
 
