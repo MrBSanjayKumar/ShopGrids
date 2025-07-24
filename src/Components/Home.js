@@ -22,9 +22,6 @@ import Image12 from '../images/products/04.jpg';
 import Image13 from '../images/products/05.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
 const Product = [
   { id: 1, sub: 'Xiaomi Mi Band 5', name: 'Watches', img: CardImg, price: 199 },
   { id: 2, sub: 'Big Power Sound Speaker', name: 'Speaker', img: CardImg1, price: 275 },
