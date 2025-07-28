@@ -1,0 +1,32 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'
+import Head from './Components/Head';
+import Home from '../src/Components/Home';
+import Contact from './Components/Contact';
+import SigninPage from './Components/SigninPage';
+import CartPage from './Components/CartPage'
+import Product from './Components/Product'
+import { CartProvider } from './Components/CartProvider';
+
+function App() {
+  return (
+    <>
+    <BrowserRouter>
+      <Head/>
+      <CartProvider>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/Product' element={<Product/>} />
+        <Route path='/Contact' element={<Contact/>} />
+        <Route path='/SigninPage' element={<SigninPage/>} />
+        <Route path='/CartPage' element={<CartPage/>} />
+      </Routes>
+      </CartProvider>
+    </BrowserRouter>
+    </>
+  );
+}
+
+export default App;
