@@ -42,7 +42,7 @@ const contact = () => {
         <div className="map_location mx-auto col-12 col-md-6 col-lg-6 py-5">
           <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.719690047835!2d78.12433847499474!3d9.957263890145969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5e1de30175d%3A0x8e17cb750fac525c!2sValluvar%20Colony%2C%20Cs%20Nagar%2C%20Madurai%2C%20Tamil%20Nadu%20625014!5e0!3m2!1sen!2sin!4v1753756991738!5m2!1sen!2sin"
-        width="800"
+        width="100%"
         height="450"
         style={{ border: 0 }}
         allowFullScreen=""
