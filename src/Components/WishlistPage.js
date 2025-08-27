@@ -1,29 +1,27 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../Components/CartProvider';
+import { WishlistContext } from '../Components/WishlistProvider';
 
-const CartPage = () => {
-  const { cartItems = [], removeFromCartItem } = useContext(CartContext);
+const WishlistPage = () => {
+  const { wishlistItems = [], removeFromWishlist } = useContext(WishlistContext);
 
-  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
-  const totalItems = cartItems.length;
+  const totalWishlist = wishlistItems.length;
 
   return (
     <>
       <div className=" total container my-4">
-        {totalItems > 0 ? (
+        {totalWishlist > 0 ? (
           <>
-            <h4>Total Items: {totalItems}</h4>
-            <h3>Total Price: ${totalPrice}</h3>
+            <h4>Total Wishlist Items: {totalWishlist}</h4>
           </>
         ) : (
-          <h4 style={{ color: "gray" }}>🛒 Your cart is empty</h4>
+          <h4 style={{ color: "gray" }}>Your wishlist is empty</h4>
         )}
       </div>
 
-      {totalItems > 0 && (
-        <div style={{ backgroundColor: "rgba(202, 225, 230, 0.2)" }}>
+      {totalWishlist > 0 && (
+        <div style={{ backgroundColor: "rgba(255, 192, 203, 0.2)" }}>
           <div className="container">
-            {cartItems.map((item) => (
+            {wishlistItems.map((item) => (
               <div className="row" key={item.id}>
                 <div className="col-lg-3 col-md-6 col-12 py-4 mb-4">
                   <div
@@ -46,7 +44,7 @@ const CartPage = () => {
                     <p>${item.price}</p>
                     <button
                       className="btn btn-danger"
-                      onClick={() => removeFromCartItem(item)}
+                      onClick={() => removeFromWishlist(item)}
                     >
                       Remove
                     </button>
@@ -61,4 +59,4 @@ const CartPage = () => {
   );
 };
 
-export default CartPage;
+export default WishlistPage;

@@ -11,8 +11,6 @@ import CardImg4 from '../images/products/product-5.jpg'
 import CardImg5 from '../images/products/product-6.jpg'
 import CardImg6 from '../images/products/product-7.jpg'
 import CardImg7 from '../images/products/product-8.jpg'
-import Image5 from '../images/banner/banner-1-bg.jpg'
-import Image6 from '../images/banner/banner-2-bg.jpg'
 import Image7 from '../images/logo/white-logo.svg'
 import Image8 from '../images/footer/credit-cards-footer.png'
 import Image9 from '../images/products/01.jpg';
@@ -21,7 +19,9 @@ import Image11 from '../images/products/03.jpg';
 import Image12 from '../images/products/04.jpg';
 import Image13 from '../images/products/05.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { CartContext } from './CartProvider';
+import { useContext } from 'react'
+import { WishlistContext } from './WishlistProvider';
 
 
 
@@ -36,7 +36,17 @@ const Product = [
   { id: 8, sub: 'Apple MacBook Air', name: 'Laptop', img: CardImg7, price: 899 }
 ]
 
+const ScrollImage = [
+  { id: 1, simg: Image9 },
+  { id: 2, simg: Image10 },
+  { id: 3, simg: Image11 },
+  { id: 4, simg: Image12 },
+  { id: 5, simg: Image13 }
+]
+
 function Home() {
+  const { addTocart, removeFromCartItem, cartItems } = useContext(CartContext);
+  const { addToWishlist, removeFromWishlist, wishlistItems } = useContext(WishlistContext);
   return (
     <>
       <section className='header'>
@@ -46,11 +56,11 @@ function Home() {
               <Carousel interval={3000} pause={false}>
 
                 <Carousel.Item>
-                  <img className="d-block w-100" src={image1} alt="image1" />
+                  <img className="d-block w-100 slider1" src={image1} alt="image1" />
                 </Carousel.Item>
 
                 <Carousel.Item>
-                  <img className="d-block w-100" src={image2} alt="image2" />
+                  <img className="d-block w-100 slider1" src={image2} alt="image2" />
                 </Carousel.Item>
 
               </Carousel>
@@ -63,28 +73,79 @@ function Home() {
       <section className='banner1'>
         <div className='container'>
           <h2 className='py-4' style={{ textAlign: "center" }}>Trending Product</h2>
-          <p className='py-4' style={{ textAlign: "center" }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration <br /> in some form</p>
+          <p className='py-4' style={{ textAlign: "center" }}>
+            There are many variations of passages of Lorem Ipsum available, 
+            but the majority have suffered alteration <br /> in some form
+          </p>
+
           <div className='row'>
-            {Product.map((product) => (
-              <div className='col-lg-3 col-md-6 col-12 py-2 mb-4 car' key={product.id}>
-                <div style={{ border: 'none', padding: '10px', backgroundColor: "white" }}>
-                  <img className='img' src={product.img} alt='...' width='100%' />
-                  <h6>{product.name}</h6>
-                  <h4>{product.sub}</h4>
-                  <div style={{ color: "#f8b400" }}>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star"></i>
+            {Product.map((ProductPage) => {
+              const inCart = cartItems.some(item => item.id === ProductPage.id);
+              const isWishlisted = wishlistItems.some(item => item.id === ProductPage.id); // ✅ check wishlist
+
+              return (
+                <div className='col-lg-3 col-md-6 col-12 py-4 mb-4' key={ProductPage.id}>
+                  <div style={{ border: 'none', padding: '10px', backgroundColor: "white", position: "relative" }}>
+                    
+                    {/* ✅ Wishlist Button */}
+                    <button
+                      onClick={() =>
+                        isWishlisted
+                          ? removeFromWishlist(ProductPage)
+                          : addToWishlist(ProductPage)
+                      }
+                      style={{
+                        background: "none",
+                        border: "none",
+                        cursor: "pointer",
+                        position: "absolute",
+                        top: "10px",
+                        right: "10px"
+                      }}
+                    >
+                      {isWishlisted ? (
+                        <i className="bi bi-heart-fill" style={{ color: "red", fontSize: "24px" }}></i>
+                      ) : (
+                        <i className="bi bi-heart" style={{ color: "gray", fontSize: "24px" }}></i>
+                      )}
+                    </button>
+
+                    <img src={ProductPage.img} alt='...' width='100%' />
+                    <h6>{ProductPage.name}</h6>
+                    <h4>{ProductPage.sub}</h4>
+
+                    <div style={{ color: "#f8b400" }}>
+                      <i className="bi bi-star-fill"></i>
+                      <i className="bi bi-star-fill"></i>
+                      <i className="bi bi-star-fill"></i>
+                      <i className="bi bi-star-fill"></i>
+                      <i className="bi bi-star"></i>
+                    </div>
+                    <p>${ProductPage.price}</p>
+
+                    {inCart ? (
+                      <button
+                        className='btn btn-danger'
+                        onClick={() => removeFromCartItem(ProductPage)}
+                      >
+                        Remove
+                      </button>
+                    ) : (
+                      <button
+                        className='btn btn-primary'
+                        onClick={() => addTocart(ProductPage)}
+                      >
+                        Add To Cart
+                      </button>
+                    )}
                   </div>
-                  <p>${product.price}</p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
+
 
       <section className='banner2'>
         <div className='conatainer primary'>
@@ -96,52 +157,22 @@ function Home() {
         </div>
       </section>
 
-      <section className='banner3'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-lg-6 col-md-6 col-12 py-4'>
-              <Carousel interval={3000} pause={false}>
-
-                <Carousel.Item>
-                  <img className="d-block w-100" src={Image5} alt="image1" />
-                </Carousel.Item>
-
-                <Carousel.Item>
-                  <img className="d-block w-100" src={Image9} alt="image2" />
-                </Carousel.Item>
-
-                <Carousel.Item>
-                  <img className="d-block w-100" src={Image11} alt="image2" />
-                </Carousel.Item>
-
-              </Carousel>
-            </div>
-            <div className='col-lg-6 col-md-6 col-12 py-4'>
-              <Carousel interval={3000} pause={false}>
-
-                <Carousel.Item>
-                  <img className="d-block w-100" src={Image10} alt="image1" />
-                </Carousel.Item>
-
-                <Carousel.Item>
-                  <img className="d-block w-100" src={Image6} alt="image2" />
-                </Carousel.Item>
-
-                <Carousel.Item>
-                  <img className="d-block w-100" src={Image12} alt="image2" />
-                </Carousel.Item>
-
-                <Carousel.Item>
-                  <img className="d-block w-100" src={Image13} alt="image2" />
-                </Carousel.Item>
-
-              </Carousel>
-            </div>
+      <section id='scroll' className='banner3'>
+        <div className='scroll-container py-3'>
+          <div className='scroll-content'>
+            {ScrollImage.concat(ScrollImage).map((scimg) => (
+              <img
+                key={scimg.id}
+                className="scroll-image"
+                src={scimg.simg}
+                alt="kk"/>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className='shipping-info'>
+
+      <section id='shipping-info' className='shipping-info'>
         <div className='container'>
           <ul>
             <li className='col-lg-3 col-md-6 col-12 py-2 mb-4'>
@@ -184,13 +215,13 @@ function Home() {
         </div>
       </section>
 
-      <section className='footer'>
+      <section id='footer' className='footer'>
         <div>
           <div className='container'>
             <div className='inner-content'>
               <div className='row'>
                 <div className='col-lg-4 col-md-4 col-12 py-5'>
-                  <img src={Image7} alt='' style={{ cursor: 'pointer', width: '200px' }} />
+                  <a href='https://shop-grids-3fag.vercel.app/'><img src={Image7} alt='' style={{ cursor: 'pointer', width: '200px' }} /></a>
                 </div>
                 <div className='col-lg-4 col-md-4 col-12 py-5'>
                   <h2 style={{ color: 'whitesmoke', fontSize: '30px' }}>Subscribe to our Newsletter</h2>

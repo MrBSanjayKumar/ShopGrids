@@ -21,16 +21,18 @@ const SigninPage = () => {
         </div>
         <div className='remember-forgot'>
           <div className='remember-me'>
-            <input type='checkbox' id='remember' />
+            <input type='checkbox' id='remember' required />
             <label for='remember'> Remember me</label>
           </div>
           <div className='forgot'>
             <a href="/">Forgot password</a>
           </div>
         </div>
-        <div className='input_box'>
+        <form>
+          <div className='input_box'>
           <input type='submit' className='input-submit' value='Login' />
         </div>
+        </form>
         <div className='register'>
           <span>Don't have an account ? <a href='/'>Register</a></span>
         </div>

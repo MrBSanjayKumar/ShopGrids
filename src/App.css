@@ -4,14 +4,100 @@
     box-sizing: border-box;
 }
 
-.img {
-    object-fit: cover;
-    transition: 1s ease;
-    cursor: pointer;
+/*============ContactPage===============*/
+.parent {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 20px;
 }
 
-.img:hover {
-    transform: scale(0.9);
+.div1 {
+    grid-column: span 6 / span 6;
+    grid-row: span 7 / span 7;
+}
+
+.div2 {
+    grid-column: span 6 / span 6;
+    grid-row: span 7 / span 7;
+    grid-column-start: 7;
+}
+
+.input_from {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.input_fromtext {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.card {
+    background-color: #7af0ee;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(247, 155, 155, 0.1);
+    padding: 20px;
+}
+
+.card-body {
+    margin: 0 50px;
+}
+
+.card-body h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 500;
+}
+
+.inner_line {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+.map_location {
+    width: 100%;
+    height: 450px;
+}
+
+@media (max-width: 480px) {
+    .card {
+        display: none !important;
+    }
+
+    .map_location {
+        width: 100%;
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        display: none !important;
+    }
+
+    .map_location {
+        width: 100% !important;
+        height: 450px;
+    }
+
+}
+
+.slider1 {
+    position: relative;
+    display: block;
+    border-radius: 30px;
+}
+
+.slidertext {
+    position: absolute;
 }
 
 .ImgLogo {
@@ -19,56 +105,6 @@
     margin: 0 30px;
 }
 
-.navbar {
-    position: relative;
-    display: flex;
-}
-
-.link {
-    text-decoration: none;
-    font-size: 20px;
-    color: black;
-}
-
-.navlinks {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    font-weight: bolder;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.navlinks1 {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    font-weight: bolder;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.link:hover {
-    color: #0d6efd;
-}
-
-.menu-icon {
-    font-size: 30px;
-    display: none;
-    color: black;
-    cursor: pointer;
-    position: relative;
-    left: auto;
-    top: 15px;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-
-.Imgslider {
-    width: 100%;
-    height: auto;
-}
 
 .banner1 {
     background-color: rgba(202, 225, 230, 0.2);
@@ -85,41 +121,6 @@
     font-size: x-large;
 }
 
-.Img-container {
-    position: relative;
-    display: inline;
-}
-
-.Img-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.text-On-Img {
-    position: absolute;
-    top: 60px;
-    left: 40px;
-    color: black;
-    border-radius: 5px;
-}
-
-.text-On-Img1 {
-    position: absolute;
-    top: 90px;
-    left: 40px;
-    color: black;
-    border-radius: 5px;
-}
-
-.but-On-Img {
-    position: absolute;
-    bottom: 35px;
-    left: 40px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 .shipping-info {
     background-color: #f9f9f9;
@@ -157,6 +158,7 @@
     outline: none;
     box-shadow: none;
     color: black;
+    display: none;
 }
 
 
@@ -183,7 +185,6 @@
     border-top: 1px solid #ffffff26;
     padding: 25px 0;
 }
-
 
 .sec1 {
     color: rgb(212, 198, 198);
@@ -440,6 +441,12 @@
     font-weight: 500;
 }
 
+.total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 @media(max-width:564px) {
     .wrapper {
         padding: 20px;
@@ -450,42 +457,7 @@
     }
 }
 
-
 @media(max-width:480px) {
-
-    .navlinks {
-        flex-direction: column;
-        position: relative;
-        display: none;
-        top: 10px;
-        width: 100%;
-    }
-
-    .navlinks .link {
-        text-align: center;
-        width: 100%;
-        padding: 10px 0;
-        color: black;
-    }
-
-    .link:hover {
-        color: blue;
-    }
-
-    .menu-toggle:checked+.menu-icon+.navlinks {
-        display: flex;
-    }
-
-    .menu-icon {
-        display: block;
-        margin: auto;
-        margin-bottom: 35px;
-        color: black;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
 
     .shipping-info li {
         width: 100%;
@@ -498,4 +470,12 @@
     .buttem {
         margin-top: 10px;
     }
+
+    .searchbox{
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+
 }
+
