@@ -75,7 +75,7 @@ const Product = () => {
                       border: "none",
                       padding: "10px",
                       backgroundColor: "white",
-                      position: "relative", // ✅ make card relative
+                      position: "relative", // make card relative
                     }}
                   >
                     {/* Wishlist Button - top right of image */}
