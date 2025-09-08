@@ -24,7 +24,7 @@ function Head() {
           <div className="head-top">
             <ul class="menu-top-link">
               <li>
-                <div classNmae="select-position">
+                {/* <div classNmae="select-position">
                   <select id="select4">
                     <option value="0" selected>$ USD</option>
                     <option value="1">€ EURO</option>
@@ -33,10 +33,10 @@ function Head() {
                     <option value="4">¥ CNY</option>
                     <option value="5">৳ BDT</option>
                   </select>
-                </div>
+                </div> */}
               </li>
               <li>
-                <div classNmae="select-position">
+                {/* <div classNmae="select-position">
                   <select id="select4">
                     <option value="0" selected>English</option>
                     <option value="1">Español</option>
@@ -46,7 +46,7 @@ function Head() {
                     <option value="5">हिन्दी</option>
                     <option value="6">বাংলা</option>
                   </select>
-                </div>
+                </div> */}
               </li>
             </ul>
 
